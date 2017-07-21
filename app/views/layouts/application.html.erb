@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Phototrek</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a href="#">Photography</a> 
+        <a href="#">Hikes</a> 
+        <a href="#">Sign-Up</a> 
+        <a href="#">About</a>
+      
+      
+      </nav>
+    
+    </header>
+    <%= yield %>
+  </body>
+</html>
