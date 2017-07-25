@@ -13,3 +13,25 @@
  *= require_tree .
  *= require_self
  */
+
+#navs {
+    background-color: darkgreen;
+}
+
+.navbar-nav li a {
+     color: #FFF !important;
+         background-color: darkgreen;
+}
+
+.navbar-nav:hover li:hover a:hover {
+      background-color:forestgreen;
+}
+
+img {
+    margin: 0 40% 2%;
+    
+}
+
+.logout {
+    text-align: right;
+}

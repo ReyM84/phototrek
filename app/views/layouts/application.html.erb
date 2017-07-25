@@ -6,19 +6,54 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script> 
+ 
+ <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+ 
+ 
   </head>
 
   <body>
     <header>
-      <nav>
-        <a href="#">Photography</a> 
-        <a href="#">Hikes</a> 
-        <a href="#">Sign-Up</a> 
-        <a href="#">About</a>
-      
-      
+     <img src="http://i.imgur.com/vhKWPg1.png" alt="">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div id='navs' class='container-fluid'>
+          <ul class="nav navbar-nav">
+            <li class="white"><a href="#">Photography</a> </li>
+            <li class="white"><a href="#">Hikes</a> </li>
+            <li class="white"><a href="users/new">Sign Up</a> </li>
+            <li class="white"><a href="#">About</a> </li>
+          </ul>   
+        </div> 
       </nav>
-    
+      <div class="container">
+        <p class="logout">
+          <% if current_user %>
+            Welcome, <%= current_user.name %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+          <% else %>
+            <%= link_to 'Log In', login_path %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Sign Up', new_user_path %>
+          <% end %>
+        </p>
+      </div>
     </header>
     <%= yield %>
   </body>
