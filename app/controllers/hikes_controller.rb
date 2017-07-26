@@ -30,6 +30,7 @@ class HikesController < ApplicationController
             else
                 render 'new'
             end
+        @photograph = Photograph.new(photograph_params)    
     end
 
 
