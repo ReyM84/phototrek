@@ -9,18 +9,25 @@ class PhotographsController < ApplicationController
     end
 
     def create
-    @photograph = Photograph.new(photograph_path)
+        @photograph = Photograph.new(photograph_params)
+        @photograph.hike_id = params[:hike_id]
+        @photograph.user = current_user
         if @photograph.save
             redirect_to hikes_path
-        else
-            render :new
         end
     end
     
     def show
+        @hike = Hike.find(params[:hike_id])
+        @photograph = Photograph.new
     end
 
     def destroy
+    end
+
+private
+    def photograph_params
+        params.require(:photograph).permit(:image)
     end
     
     

@@ -1,32 +1,34 @@
 <div class="page-header"><h3>Submit New Hike</h3></div>
-
+<div class="container form input-group">
 <%= form_for @hike, url: hikes_path, html: { multipart: true } do |f| %>
   
 
-  <div class="input-group-addon">
+  <div class="form-control input-group-addon">
     <%= f.label :location %>
     <%= f.text_field :location %>
   </div><br>
 
-   <div class="input-group-addon">
+   <div class="form-control input-group-addon">
     <%= f.label :difficulty %>
     <%= f.range_field(:difficulty, in: 1..10) %>
   </div><br>
 
-  <div class="input-group-addon">
+  <div class="form-control input-group-addon">
     <%= f.label :length %>
     <%= f.text_field :length %>
   </div><br>
 
-   <div class="input-group-addon">
+   <div class="form-control input-group-addon">
     <%= f.label :comment %>
     <%= f.text_field :comments %>
   </div>
-    <%= form_for @photograph, url: photographs_path, html: { multipart: true } do |file| %>
-        <div class="input-group-addon">
-            <%= file.file_field :image %><br><br>
-        </div>
-    <% end %>    
+    <br>
+      
+    <div class="form-control">
+        <%= f.file_field :image %>
+    </div>
 
   <%= f.submit 'Submit', class: 'btn btn-primary' %>
 <% end %>
+
+</div>

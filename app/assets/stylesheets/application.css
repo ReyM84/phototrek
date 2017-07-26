@@ -38,3 +38,8 @@ img {
 .logout {
     text-align: right;
 }
+
+.medium {
+    height: 200px;
+    width: auto;
+}

@@ -1,6 +1,7 @@
 class HikesController < ApplicationController
     # before_action :set_hike, only: [:show, :edit, :update, :destroy]
     # before_action :authorize, except: [:index, :show]
+
     
     def index
         @hikes = Hike.order('location')
@@ -8,6 +9,7 @@ class HikesController < ApplicationController
 
     def show
         @hike = Hike.find(params[:id])
+        @photograph = Photograph.new
     end
     
 
@@ -30,14 +32,14 @@ class HikesController < ApplicationController
             else
                 render 'new'
             end
-        @photograph = Photograph.new(photograph_params)    
+  
     end
 
 
 private
 
     def hike_params
-        params.require(:hike).permit(:location, :length, :difficulty, :comments)
+        params.require(:hike).permit(:location, :length, :difficulty, :comments, :image)
     end
         
         
