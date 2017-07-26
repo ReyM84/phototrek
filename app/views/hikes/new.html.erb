@@ -1,6 +1,6 @@
 <div class="page-header"><h3>Submit New Hike</h3></div>
 
-<%= form_for @hike, html: { multipart: true } do |f| %>
+<%= form_for @hike, url: hikes_path, html: { multipart: true } do |f| %>
   
 
   <div class="input-group-addon">
@@ -21,6 +21,10 @@
    <div class="input-group-addon">
     <%= f.label :comment %>
     <%= f.text_field :comments %>
+  </div>
+
+   <div class="input-group-addon">
+    <%= f.file_field :image %><br><br>
   </div>
 
 

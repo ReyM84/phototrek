@@ -1,1 +1,31 @@
-<%= link_to "New Hike", new_hike_path %>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Hikes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Location</th>
+      <th>Difficulty</th>
+      <th>Length</th>
+      <th>Comments</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hikes.each do |hike| %>
+      <tr>
+        <td><%= link_to hike.location, hike %></td>
+        <td><%= hike.difficulty %></td>
+        <td><%= hike.length %></td>
+        <td><%= hike.comments %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Add new hike', new_hike_path %>
