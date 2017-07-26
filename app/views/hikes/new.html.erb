@@ -1,0 +1,28 @@
+<div class="page-header"><h3>Submit New Hike</h3></div>
+
+<%= form_for @hike, html: { multipart: true } do |f| %>
+  
+
+  <div class="input-group-addon">
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div><br>
+
+   <div class="input-group-addon">
+    <%= f.label :difficulty %>
+    <%= f.range_field(:difficulty, in: 1..10) %>
+  </div><br>
+
+  <div class="input-group-addon">
+    <%= f.label :length %>
+    <%= f.text_field :length %>
+  </div><br>
+
+   <div class="input-group-addon">
+    <%= f.label :comment %>
+    <%= f.text_field :comments %>
+  </div>
+
+
+  <%= f.submit 'Submit', class: 'btn btn-primary' %>
+<% end %>
