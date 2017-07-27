@@ -34,7 +34,7 @@
 <% end %>
 
 <% @hike.photographs.each do |photo| %>
-     <%= image_tag @hike.image.url, class: "medium" %> 
+     <%= image_tag (photo.image), class: "medium" %> 
 
 <% end %>
 
