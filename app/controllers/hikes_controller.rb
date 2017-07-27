@@ -9,6 +9,7 @@ class HikesController < ApplicationController
 
     def show
         @hike = Hike.find(params[:id])
+        puts "This is the params hash #{params}"
         @photograph = Photograph.new
     end
     

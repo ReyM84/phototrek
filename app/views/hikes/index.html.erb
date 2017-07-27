@@ -21,7 +21,7 @@
         <td><%= hike.difficulty %></td>
         <td><%= hike.length %></td>
         <td><%= hike.comments %></td>
-        <td><%= image_tag(hike.image.url, class: "medium" )%></td>
+        <td><%= link_to image_tag(hike.image.url, class: "medium" ), hike %></td>
       </tr>
     <% end %>
   </tbody>

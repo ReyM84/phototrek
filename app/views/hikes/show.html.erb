@@ -27,14 +27,14 @@
 
 <%= form_for [@hike, @photograph] do |f| %>
     <div class="form-control">
-        <%= f.file_field :image %>
+        <%= f.file_field :image, :required => true %>
     </div>
 
     <%= f.submit 'Add Photo', class: 'btn btn-primary' %>
 <% end %>
 
 <% @hike.photographs.each do |photo| %>
-     <%= image_tag (photo.image), class: "medium" %> 
+     <%= image_tag (photo.image), class: "medium"  %> 
 
 <% end %>
 

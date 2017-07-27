@@ -10,16 +10,19 @@ class PhotographsController < ApplicationController
 
     def create
         @photograph = Photograph.new(photograph_params)
+        puts "This is the hike #{params[:hike_id].inspect.to_s}"
         @photograph.hike_id = params[:hike_id]
-        @photograph.user = current_user
+        @photograph.user_id = current_user.id
         if @photograph.save
-            redirect_to hikes_path
+            redirect_to hike_path(params[:hike_id])
+        else 
+            render :new
         end
     end
     
     def show
-        @hike = Hike.find(params[:hike_id])
-        @photograph = Photograph.new
+        @photograph = Photograph.find(params[:id])
+        @hike = Hike.find(@photograph.hike_id)
     end
 
     def destroy
