@@ -10,28 +10,24 @@
             </ul>
         </div>
     <% end %>
-    <div class = "container-fluid" id="forms3">
-        <h1>Sign up!</h1>
-        <div class="field">
-            <%= f.label :name %>
-            <%= f.text_field :name%>
-        </div>    
-        <div class="field">
-            <%= f.label :email %>
-            <%= f.text_field :email %>
+        <div class="container-fluid sinform">
+            <h1 id="sign_up">Sign up!</h1>
+            <div class="field" id="f1">
+                <%= f.text_field :name, placeholder: "Name"%>
+            </div>
+            <div class="field" id="f2">
+                <%= f.text_field :email, placeholder: "Email" %>
+            </div>
+            <div class="field" id="f3">
+                <%= f.text_field :zipcode, placeholder: "Zipcode" %>
+            </div>
+            <div class="field" id="f4">
+                <%= f.password_field :password, placeholder: "Password" %>
+            </div>
+            <div class="field" id="f5">
+                <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
+            </div>
+            <div class="actions" id="f_submit">
+                <%= f.submit %>
         </div>
-        <div class="field">
-            <%= f.label :zipcode %>
-            <%= f.text_field :zipcode %>
-        </div>
-        <div class="field">
-            <%= f.label :Password %>
-            <%= f.password_field :password %>
-        </div>
-        <div class="field">
-            <%= f.label :password_confirmation %>
-            <%= f.password_field :password_confirmation %>
-        </div>
-        <div class="actions"><%= f.submit %></div>
-    </div>
 <% end %>

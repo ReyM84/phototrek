@@ -1,3 +1,6 @@
 <%= image_tag @photograph.image.url, class: "photoshow" %>
-
-<%= link_to 
+<div class="footer container">
+<footer>
+<h3><%= link_to @hike.location, hike_path(@photograph.hike) %></h3>
+</footer>
+</div>

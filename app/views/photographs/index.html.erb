@@ -1,6 +1,5 @@
-<% @photographs.each do |photo| %>
-     <%= image_tag (photo.image), class: "photoin"  %>
-     <% end %>
+<div class="container"><% @photographs.each do |photo| %>
+     <%= link_to image_tag(photo.image.url, class: "photoin"), photograph_path(photo) %>
+<% end %>
 
-
-
+</div>
