@@ -1,15 +1,16 @@
-<h1>Log In</h1>
-<p id="alert"><%= alert %></p>
-<div class="container">
-  <%= form_tag sessions_path do %>
-    <div class="field">
-      <%= label_tag :email %>
-      <%= text_field_tag :email, params[:email] %>
-    </div>
-    <div class="field">
-      <%= label_tag :password %>
-      <%= password_field_tag :password %>
-    </div>
-    <div class="actions"><%= submit_tag "Log In" %></div>
-  <% end %>
-</div>
+<div class="container login">
+		<h1 id="login">Log In</h1>
+		<p id="alert"><%= alert %></p>
+		<div class="container">
+			<%= form_tag sessions_path do %>
+			<div class="field" id="l1">
+			  <%= text_field_tag :email, params[:email], placeholder: "Email@email.email" %>
+			</div>
+			<div class="field" id="l2">
+				<%= password_field_tag :password, placeholder: "Password goes here" %>
+			</div>
+			<div class="actions" id="ls">
+				<%= submit_tag "Log In" %>
+			</div><%end %>
+		</div>
+	</div>
