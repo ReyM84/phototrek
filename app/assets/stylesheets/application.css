@@ -29,7 +29,13 @@
 }
 
 img {
-    height: 40px; 
+    max-width: 300px; 
+    max-height: 300px;
+}
+
+.logo {
+    margin-left: -9%;
+    height: 50px; 
     width: auto; 
     max-width: 300px; 
     max-height: 300px; 

@@ -11,7 +11,7 @@
         </div>
     <% end %>
         <div class="container-fluid sinform">
-            <h1 id="sign_up">Edit User</h1>
+            <h1 id="sign_up">Sign up!</h1>
             <div class="field" id="f1">
                 <%= f.text_field :name, placeholder: "Name"%>
             </div>
@@ -22,10 +22,10 @@
                 <%= f.text_field :zipcode, placeholder: "Zipcode" %>
             </div>
             <div class="field" id="f4">
-                <%= f.password_field :password, placeholder: "Password", :required => true %>
+                <%= f.password_field :password, placeholder: "Password" %>
             </div>
             <div class="field" id="f5">
-                <%= f.password_field :password_confirmation, placeholder: "Confirm Password", :required => true %>
+                <%= f.password_field :password_confirmation, placeholder: "Confirm Password" %>
             </div>
             <div class="actions" id="f_submit">
                 <%= f.submit %>

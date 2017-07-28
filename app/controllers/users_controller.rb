@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+
+    
     def new
         @user = User.new
     end
@@ -13,8 +15,9 @@ class UsersController < ApplicationController
         if @user.save
             session[:user_id] = @user.id
             flash[:notice] = "You have successfully signed up!"
-            redirect_to root_path
+            redirect_to root_path, notice: 'Logged in!'
         else
+            flash.now.alert = 'Invalid login credentials - try again!'
             render :new
         end
     end
@@ -26,9 +29,13 @@ class UsersController < ApplicationController
     def update
         @user = User.find(params[:id])
         @user.update(user_params)
-        redirect_to(user_path(@user))
+        redirect_to(hikes_path)
     end
     
+    def destroy 
+        session[user_id] = nil
+        redirect_to root_path, notice: 'Logged out!'
+    end
     
 private
 

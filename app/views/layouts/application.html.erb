@@ -33,11 +33,17 @@
     <nav class="navbar navbar-default navbar-static-top">
         <div id='navs' class='container-fluid'>
           <ul class="nav navbar-nav">
-            <li><img src="http://i.imgur.com/vhKWPg1.png" alt=""></li>
+            <li><img src="http://i.imgur.com/vhKWPg1.png" alt="" class="logo"></li>
             <li class="white"><%= link_to "Photos", photographs_path %> </li>
             <li class="white"><%= link_to "Hikes", hikes_path %> </a> </li>
             <li class="white"><a href="#">About</a> </li>
-            <li class="white"><%= link_to "Login", login_path %>  </li>
+            <li class="white">
+             <% if current_user %>
+                <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+              <% else %>
+                <%= link_to 'Log In', login_path %>
+            
+              <% end %> </li>
           </ul>   
         </div> 
       </nav> 
@@ -48,6 +54,8 @@
             Welcome, <%= current_user.name %>
             &nbsp;&nbsp;|&nbsp;&nbsp;
             <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Edit Profile', current_user %>
           <% else %>
             <%= link_to 'Log In', login_path %>
             &nbsp;&nbsp;|&nbsp;&nbsp;

@@ -1,34 +1,31 @@
-<div class="page-header"><h3>Submit New Hike</h3></div>
-<div class="container form input-group">
-<%= form_for @hike, url: hikes_path, html: { multipart: true } do |f| %>
-  
+<div class="page-header"><h3 id="h3hik">Submit New Hike</h3></div>
+<div class="container hikform">
+    <%= form_for @hike do |f| %>
+        
 
-  <div class="form-control input-group-addon">
-    <%= f.label :location %>
-    <%= f.text_field :location, :required => true %>
-  </div><br>
+        <div class="field">
+            <%= f.text_field :location, :required => true, placeholder: "location" %>
+        </div><br>
 
-   <div class="form-control input-group-addon">
-    <%= f.label :difficulty %>
-    <%= f.range_field(:difficulty, in: 1..10, :required => true) %>
-  </div><br>
+        <div class="field">
+            <%= f.number_field :difficulty, max: 10, placeholder: "Trail difficulty 1-10" %>
+        </div><br>
 
-  <div class="form-control input-group-addon">
-    <%= f.label :length %>
-    <%= f.text_field :length, :required => true %>
-  </div><br>
+        <div class="field">
+            <%= f.text_field :length, :required => true, placeholder: "Length: (ex 2 hrs 15 mins)" %>
+        </div><br>
 
-   <div class="form-control input-group-addon">
-    <%= f.label :comment %>
-    <%= f.text_field :comments, :required => true %>
-  </div>
-    <br>
-      
-    <div class="form-control">
-        <%= f.file_field :image, :required => true %>
-    </div>
-
-  <%= f.submit 'Submit', class: 'btn btn-primary' %>
-<% end %>
+        <div class="field">
+            <%= f.text_field :comments, :required => true, placeholder: "Comments" %>
+        </div>
+            <br>
+            
+        <div class="field">
+            <%= f.file_field :image, class: 'hinput', :required => true %>
+        </div>
+        <div class="field">
+            <%= f.submit 'Submit', class: 'btn btn-primary hiksub' %>
+        </div> 
+    <% end %>
 
 </div>

@@ -1,42 +1,47 @@
 <p id="notice"><%= notice %></p>
 
+<div class="container hkshow">
+    <% @hike_path %>
+    <strong>Location:</strong>
+    <%= @hike.location %>
+    </p>
 
-<% @hike_path %>
-  <strong>Location:</strong>
-  <%= @hike.location %>
-</p>
+    <p>
+    <strong>Difficulty:</strong>
+    <%= @hike.difficulty %>
+    </p>
 
-<p>
-  <strong>Difficulty:</strong>
-  <%= @hike.difficulty %>
-</p>
+    <p>
+    <strong>Length:</strong>
+    <%= @hike.length %>
+    </p>
 
-<p>
-  <strong>Length:</strong>
-  <%= @hike.length %>
-</p>
+    <p>
+    <strong>Comments:</strong>
+    <%= @hike.comments %>
+    </p>
 
-<p>
-  <strong>Comments:</strong>
-  <%= @hike.comments %>
-</p>
+    <p> 
+        <%= image_tag @hike.image.url, class: "hikeshow" %>
+    </p>   
+</div>
+<div class="container-fluid resto">
 
-<p> 
-    <%= image_tag @hike.image.url, class: "medium" %>
-</p>
+    <% if current_user %>
 
-<%= form_for [@hike, @photograph] do |f| %>
-    <div class="form-control">
-        <%= f.file_field :image, :required => true %>
-    </div>
+        <%= form_for [@hike, @photograph] do |f| %>
+            <div id="choose">
+                <%= f.file_field :image, :required => true %>
+            </div>
 
-    <%= f.submit 'Add Photo', class: 'btn btn-primary' %>
-<% end %>
+            <%= f.submit 'Add Photo', class: 'btn btn-primary', id:'hsub' %>
+        <% end %>
+    <% end %>
 
-<% @hike.photographs.each do |photo| %>
-     <%= image_tag (photo.image), class: "medium"  %> 
+    <% @hike.photographs.each do |photo| %>
+        <%= link_to image_tag(photo.image.url, class: "photoin"), photograph_path(photo) %>
 
-<% end %>
-
-<%= link_to 'Edit', edit_hike_path(@hike) %> |
-<%= link_to 'Back', hikes_path %>
+    <% end %>
+</div>
+   
+    <%= link_to 'Back', hikes_path %>

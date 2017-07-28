@@ -14,9 +14,13 @@
   transform-origin:0 0;
   height: auto;
   width: auto;
+  position: relative;
+  display: block;
+
 }
 
 .footer {
-  margin: 20%;
+  margin: 25%;
   text-align: center;
+  position: relative;
 }
