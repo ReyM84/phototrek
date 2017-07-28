@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div id="back">    
+    <%= link_to 'Back', hikes_path %>
+</div>
+
 <div class="container hkshow">
     <% @hike_path %>
     <strong>Location:</strong>
@@ -25,16 +29,19 @@
         <%= image_tag @hike.image.url, class: "hikeshow" %>
     </p>   
 </div>
+
 <div class="container-fluid resto">
 
     <% if current_user %>
 
         <%= form_for [@hike, @photograph] do |f| %>
-            <div id="choose">
-                <%= f.file_field :image, :required => true %>
+            <div class="container chooser">
+                <div id="choose">
+                    <%= f.file_field :image, class: 'hinputs', :required => true %>
+                </div>
             </div>
 
-            <%= f.submit 'Add Photo', class: 'btn btn-primary', id:'hsub' %>
+            <%= f.submit 'Add Photo', class: 'btn btn-success btn-sm', id:'hsub' %>
         <% end %>
     <% end %>
 
@@ -44,4 +51,4 @@
     <% end %>
 </div>
    
-    <%= link_to 'Back', hikes_path %>
+

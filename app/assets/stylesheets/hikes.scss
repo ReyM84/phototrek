@@ -4,8 +4,8 @@
 
 .hikeshow {
   margin: 0 25%;
-  transform:scale(2,2);
-  transform-origin:0 0;
+  transform: scale(2, 2);
+  transform-origin: 0 0;
   height: auto;
   width: auto;
   position: relative;
@@ -19,7 +19,8 @@
 }
 
 #hsub {
-    padding: 5px;
+  margin: -3.5% 0 0 13%;
+  display: inline;
 }
 
 .hikform {
@@ -36,5 +37,9 @@
 }
 
 #h1index {
-    text-align: center;
+  text-align: center;
+}
+
+.chooser{
+  display: inline;
 }

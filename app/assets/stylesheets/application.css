@@ -49,3 +49,8 @@ img {
     height: 100px;
     width: 100px;
 }
+
+.btn-success {
+    color: darkgreen;
+    background-color: darkgreen;
+}
