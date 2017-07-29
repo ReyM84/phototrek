@@ -1,6 +1,6 @@
 # ![logol](https://i.imgur.com/y2IRgI7.png) V.1.0
 ## About the app:
-1. Phototrek is a social media based app geared specifically towards photographs taken while hiking. 
+1. Phototrek is a social media based app geared specifically towards nature phorography taken while hiking. 
 2. Users will be able to pick a hike directly from our Hike database 
 ![hike](http://i.imgur.com/Zt0qTX9.png)
 3. Users can also take a look at all of the photos on the site and pick a hike that way.
@@ -16,10 +16,13 @@
 * JQuery
 * Bootstrap
 * Ruby
-* Ruby on Rails
+* Rails
+* Postresql
 
 ## Getting Started:
-Phototrek can be viewed at [PhotoTrek	](http://phototrek.herokuapp.com/)
+Phototrek can be viewed at [PhotoTrek](http://phototrek.herokuapp.com/)
+
+Trello can be viewed at [Trello](xhttps://trello.com/b/lB5n5tUe/phototrek)
 
 ## Planned updates:
 * Comment section
