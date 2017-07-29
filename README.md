@@ -22,7 +22,7 @@
 ## Getting Started:
 Phototrek can be viewed at [PhotoTrek](http://phototrek.herokuapp.com/)
 
-Trello can be viewed at [Trello](xhttps://trello.com/b/lB5n5tUe/phototrek)
+Trello can be viewed at [Trello](https://trello.com/b/lB5n5tUe/phototrek)
 
 ## Planned updates:
 * Comment section
