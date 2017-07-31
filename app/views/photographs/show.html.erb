@@ -4,5 +4,8 @@
         <footer>
             <h3><%= link_to @hike.location, hike_path(@photograph.hike) %></h3>
         </footer>
+        <% if current_user %>
+                <td><%= link_to 'Delete', photograph_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>        
    </div> 
 </div> 

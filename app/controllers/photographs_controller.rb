@@ -1,5 +1,6 @@
 class PhotographsController < ApplicationController
-    
+             before_action :authorize, except: [:index, :show]
+
     def index
         @photographs = Photograph.all    
     end
@@ -26,6 +27,9 @@ class PhotographsController < ApplicationController
     end
 
     def destroy
+        @photograph = Photograph.find(params[:id])
+        @photograph.destroy
+        redirect_to photographs_path
     end
 
 private
